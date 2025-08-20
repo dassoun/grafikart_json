@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        
+        class Rectangle {
+
+            constructor (width, height) {
+                if (width <= 0 || height <= 0) {
+                    throw new Error('Impossible d\'avoir une forme géométrique avec des dimensions inférieures ou égales à 0')
+                }
+                this.width = width
+                this.height = height
+            }
+
+            get perimeter () {
+                return (this.width * 2) + (this.height * 2)
+            }
+
+            isValid() {
+                return (this.width > 0 && this.height > 0)
+            }
+
+            isBiggerThan(shape) {
+                return (this.perimeter) > (shape.perimeter)
+            }
+        }
+
+        class Square extends Rectangle {
+            constructor (width) {
+                super(width, width)
+            }
+        }
+
+        class PromptError extends Error {
+
+        }
+
+        function promptRectangle () {
+            try {
+                const width = parseInt(prompt('Largeur'), 10)
+                const height = parseInt(prompt('Hauteur'), 10)
+                const r = new Rectangle(width, height)
+                return r
+            } catch (e) {
+                throw new PromptError('Entrée utilisateur invalide', {cause: e})
+            }
+        }
+
+        try {
+            promptRectangle()
+        } catch (e) {
+            if (e instanceof PromptError) {
+                console.log('PromptError')
+            } else {
+                console.log(e.message, {e})
+            }
+            
+        }
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

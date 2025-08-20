@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        const numberToFind = Math.floor(Math.random() * 11)
+
+        console.log(numberToFind)
+
+        function isRight(guessed) {
+            return parseInt(guessed) === numberToFind
+        }
+
+        function guess() {
+            return prompt("Saisissez un nombre entre 0 et 10 :")
+        }
+
+        let found = false
+
+        let tryNumber = 0;
+        while (!found && tryNumber < 3) {
+            myNumber = guess()
+            
+            if (isRight(myNumber)) {
+                found = true;
+
+                console.log("Bravo ! Vous avez trouvé !!!")
+            }
+
+            tryNumber++
+        }
+
+        if (!found) {
+            console.log(`Le nombre à trouver était ${numberToFind}`)
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
