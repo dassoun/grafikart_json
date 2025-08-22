@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./app.js" type="module"></script>
+    <style>
+        .spoiler {
+            background-color: #000;
+            color: #000;
+            cursor: pointer;
+        }
+        .spoiler::selection {
+            color: rgba(0, 0, 0, 0)
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <!-- <input type="text" name="firstname"> -->
+        <!-- <input type="checkbox" name="firstname"> -->
+         <select multiple name="firstname" id="">
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+         </select>
+        <button>Envoyer</button>        
+    </form>
+
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium eveniet voluptate enim molestias quidem suscipit rem velit veniam? Architecto, officiis quis adipisci dignissimos aperiam optio eius minima cumque quisquam necessitatibus?
+        <span class="spoiler">Vel</span>, cum recusandae tenetur itaque quaerat cupiditate maiores architecto perspiciatis dolores natus accusantium id rem nobis porro, numquam eum, voluptates commodi quod fugiat repellat! Quos cupiditate sapiente unde cum qui.
+        Voluptatem magni magnam, et numquam quos soluta consequatur natus odit<span class="spoiler">, culpa repudiandae pariatur consequuntur eveniet totam veniam neque eius voluptates voluptate id</span>. Totam, nisi adipisci. Quibusdam vero repellendus exercitationem. Officia.
+    </p>
+</body>
+</html>
